@@ -1,0 +1,19 @@
+full link refer: https://vinodpandey.com/how-to-install-sentry-on-centos-6/
+
+source venv/bin/activate
+pip install sentry==9.0.0
+
+check uWSGI version (using pip feeze) and if it's not 2.0.17.1 re-install it
+pip install uWSGI==2.0.17.1 ####  VERY IMPORTANT  ##############
+
+in uWSGI==2.0.19.1, content mismatch error in thrown and static files doesn't load in web page
+
+in logs, below is the error
+
+127.0.0.1 - - [24/Aug/2019:07:11:20 +0000] "GET /_static/1598253066/sentry/images/default-organization-logo.png HTTP/1.1" 200 258 "https://etsplindia.com/auth/login/sentry/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+Traceback (most recent call last):
+  File "/opt/sentry/venv/lib/python2.7/site-packages/raven/middleware.py", line 100, in __call__
+    iterable = self.application(environ, start_response)
+  File "/opt/sentry/venv/lib/python2.7/site-packages/sentry/wsgi.py", line 44, in __call__
+    response = environ['wsgi.file_wrapper'](response.streaming_content)
+AttributeError: object has no attribute 'read'
