@@ -1,5 +1,0 @@
-#reset trial ide windows
-echo Y | del "C:\Users\%USERNAME%\AppData\Roaming\JetBrains\PhpStorm2021.1\eval\*.*"
-# Remove old license key
-echo Y | del "C:\Users\%USERNAME%\AppData\Roaming\JetBrains\PhpStorm2021.1\eval\*.*"
-open regedit and delete "HKEY_CURRENT_USER\SOFTWARE\JavaSoft\Prefs\jetbrains"
