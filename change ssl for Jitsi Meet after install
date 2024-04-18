@@ -1,0 +1,5 @@
+change ssl for Jitsi Meet after install
+$ vi /etc/nginx/sites-available/meet.your_domain_name.com
+find and replace new ssl key and pem in 443 section
+$ nginx -t 
+$ nginx -s reload
